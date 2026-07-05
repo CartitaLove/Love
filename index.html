@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+body{
+    margin:0; 
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a237e, #9c27b0);
+    display:flex; justify-content:center; align-items:center; 
+    height:100vh; color:white; text-align:center;
+    overflow:hidden;
+}
+.sobre{
+    width:300px; height:200px; background:#fff; border-radius:10px;
+    position:relative; cursor:pointer; transition:0.5s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.sobre:hover{transform: scale(1.05);}
+.tapa{
+    position:absolute; width:0; height:0; border-left:150px solid transparent;
+    border-right:150px solid transparent; border-bottom:100px solid #e1bee7;
+    top:0; left:0; border-radius:10px 10px 0 0;
+}
+.carta{
+    display:none; padding:30px; max-width:500px; 
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    border-radius:20px;
+}
+h1{font-size:2em; margin-bottom:10px}
+p{font-size:1.1em; line-height:1.6; font-weight:300}
+.galeria{display:flex; gap:10px; justify-content:center; margin:20px 0}
+.galeria img{width:100px; height:100px; border-radius:15px; object-fit:cover; border:3px solid white}
+.btn{
+    background:#25D366; color:white; padding:12px 25px; border-radius:50px;
+    text-decoration:none; font-weight:600; display:inline-block; margin-top:15px
+}
+.corazon{position:absolute; font-size:20px; animation:flotar 3s infinite}
+@keyframes flotar{
+    0%{transform:translateY(0); opacity:1}
+    100%{transform:translateY(-400px); opacity:0}
+</style>
+</head>
+<body>
+
+<div class="sobre" onclick="abrirCarta()">
+    <div class="tapa"></div>
+    <p style="color:#1a237e; padding-top:80px; font-weight:600">Para ti ❤️<br>Toca aquí</p>
+</div>
+
+<div class="carta" id="carta">
+    <h1>Para la mujer más bonita</h1>
+    <p id="texto-carta">
+    Solo quería recordarte que te pienso mucho. 
+    Me encanta tu risa, tu forma de ver el mundo y hasta cuando te enojas jaja.
+    Gracias por existir y por dejarme quererte así, sin medida.
+    
+    Este es un "te quiero" chiquito pero que viene del corazón 💜
+    </p>
+    
+    <div class="galeria">
+        <img src="foto1.jpg" alt="Nosotros 1">
+        <img src="foto2.jpg" alt="Nosotros 2">
+        <img src="foto3.jpg" alt="Nosotros 3">
+    </div>
+    
+    <a href="https://wa.me/TUNUMERO?text=Te%20quiero%20mucho%20también%20❤️" class="btn">Respóndeme con un te quiero</a>
+</div>
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function abrirCarta(){
+    document.querySelector('.sobre').style.display = 'none';
+    document.getElementById('carta').style.display = 'block';
+    document.getElementById('musica').play();
+    soltarCorazones();
+}
+function soltarCorazones(){
+    for(let i=0; i<15; i++){
+        let corazon = document.createElement('div');
+        corazon.className = 'corazon';
+        corazon.innerHTML = '💜';
+        corazon.style.left = Math.random()*100 + 'vw';
+        corazon.style.top = '100vh';
+        document.body.appendChild(corazon);
+        setTimeout(()=>corazon.remove(), 3000);
+    }
+}
+</script>
+</body>
+</html>
