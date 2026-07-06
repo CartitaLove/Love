@@ -14,168 +14,40 @@
         --texto: #5A3E36;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { 
-        background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F1 50%, #FFB6D9 100%);
-        color: var(--texto);
-        min-height: 100vh;
-    }
-    body::before {
-        content: "🐰 🎀 ✨ 🐰 🎀 ✨";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        font-size: 1.5rem;
-        opacity: 0.08;
-        z-index: -1;
-        pointer-events: none;
-    }
-    header { 
-        background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); 
-        padding: 35px 20px; 
-        text-align: center; 
-        color: white; 
-        position: sticky; 
-        top: 0; 
-        z-index: 10;
-    }
+    body { background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F1 50%, #FFB6D9 100%); color: var(--texto); min-height: 100vh; }
+    body::before { content: "🐰 🎀 ✨ 🐰 🎀 ✨"; position: fixed; top: 0; left: 0; width: 100%; height: 100%; font-size: 1.5rem; opacity: 0.08; z-index: -1; pointer-events: none; }
+    header { background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); padding: 35px 20px; text-align: center; color: white; position: sticky; top: 0; z-index: 10; }
     header h1 { font-size: 2.5rem; font-family: 'Playfair Display', serif; }
     header h1::before { content: "🐰 "; }
     header h1::after { content: " 🎀"; }
-    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #20BA5A); color: white; padding: 12px 26px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; font-size: 0.95rem; }
     .container { max-width: 1000px; margin: auto; padding: 40px 15px; }
     h2 { text-align: center; color: var(--rosa-fuerte); margin-bottom: 25px; font-size: 1.9rem; font-family: 'Playfair Display', serif; }
     h2::before { content: "✨ "; }
     h2::after { content: " ✨"; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { 
-        background: #FFFFFF; 
-        border-radius: 20px; 
-        padding: 20px; 
-        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15); 
-        border: 2px solid var(--rosa-claro);
-    }
+    .card { background: #FFFFFF; border-radius: 20px; padding: 20px; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15); border: 2px solid var(--rosa-claro); }
     .promo-card { border: 2px dashed var(--rosa-fuerte); background: #FFF0F5; }
     .promo-tag { background: var(--rosa-fuerte); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
     .card h3 { color: var(--rosa); margin-bottom: 15px; text-align: center; font-size: 1.2rem; font-weight: 700; }
     .item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; padding: 12px; background: #FFF0F5; border-radius: 12px; border: 1px solid var(--rosa-claro); }
     .precio { font-weight: 700; color: var(--rosa-fuerte); font-size: 1.1rem; }
     .precio-promo { font-weight: 700; color: var(--rosa-fuerte); font-size: 1.1rem; }
-    
-    .btn-comprar { 
-        background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); 
-        color: white; 
-        border: none; 
-        padding: 8px 14px; 
-        border-radius: 12px; 
-        cursor: pointer; 
-        font-size: 0.8rem; 
-        font-weight: 700;
-    }
+    .btn-comprar { background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); color: white; border: none; padding: 8px 14px; border-radius: 12px; cursor: pointer; font-size: 0.8rem; font-weight: 700; }
     .btn-comprar::before { content: "🛍️ "; }
-
-    .pago-box { 
-        background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); 
-        border: 3px solid var(--rosa-fuerte); 
-        padding: 25px; 
-        border-radius: 25px; 
-        text-align: center;
-    }
+    .pago-box { background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); border: 3px solid var(--rosa-fuerte); padding: 25px; border-radius: 25px; text-align: center; }
     .pago-box h4 { color: white; font-size: 1.3rem; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
-    .pago-box h4::before { content: "🎀 "; }
-    .pago-box h4::after { content: " 🎀"; }
-    .dato { 
-        background: rgba(255,255,255,0.98); 
-        padding: 12px; 
-        border-radius: 15px; 
-        margin: 10px 0; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        border: 2px solid var(--rosa-claro);
-        font-size: 0.9rem;
-    }
+    .dato { background: rgba(255,255,255,0.98); padding: 12px; border-radius: 15px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center; border: 2px solid var(--rosa-claro); font-size: 0.9rem; }
     .qr-img { width: 200px; height: 200px; border-radius: 20px; border: 4px solid white; margin: 12px auto; display: block; background: white; padding: 10px; }
     .nota { background: #FFE4F1; padding: 20px; border-radius: 20px; margin-top: 25px; text-align: center; border: 2px dashed var(--rosa); }
     footer { background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa)); color: white; text-align: center; padding: 35px 20px; margin-top: 40px; }
-
-    /* VENTANA MODAL */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        animation: fadeIn 0.3s;
-        overflow-y: auto;
-    }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    .modal-content {
-        background: linear-gradient(135deg, #FFFFFF, #FFF0F5);
-        margin: 5% auto;
-        padding: 25px;
-        border-radius: 25px;
-        width: 90%;
-        max-width: 450px;
-        border: 3px solid var(--rosa-fuerte);
-        box-shadow: 0 10px 40px rgba(255,105,180,0.4);
-        position: relative;
-    }
-    .modal-content h3 {
-        color: var(--rosa-fuerte);
-        text-align: center;
-        font-family: 'Playfair Display', serif;
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-    }
-    .modal-content h3::before { content: "🎀 "; }
-    .modal-content h3::after { content: " 🎀"; }
-    .close {
-        color: var(--rosa-fuerte);
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-        position: absolute;
-        right: 15px;
-        top: 10px;
-    }
-    .producto-seleccionado {
-        background: var(--rosa-bebe);
-        padding: 12px;
-        border-radius: 15px;
-        text-align: center;
-        margin-bottom: 15px;
-        border: 2px dashed var(--rosa);
-        font-weight: 700;
-    }
-    .btn-ws-pago {
-        background: linear-gradient(135deg, #25D366, #20BA5A);
-        color: white;
-        padding: 14px;
-        border-radius: 15px;
-        text-decoration: none;
-        font-weight: 700;
-        display: block;
-        text-align: center;
-        margin-top: 15px;
-        font-size: 1rem;
-    }
+    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); overflow-y: auto; }
+    .modal-content { background: linear-gradient(135deg, #FFFFFF, #FFF0F5); margin: 5% auto; padding: 25px; border-radius: 25px; width: 90%; max-width: 450px; border: 3px solid var(--rosa-fuerte); }
+    .modal-content h3 { color: var(--rosa-fuerte); text-align: center; font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 1.5rem; }
+    .close { color: var(--rosa-fuerte); float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .producto-seleccionado { background: var(--rosa-bebe); padding: 12px; border-radius: 15px; text-align: center; margin-bottom: 15px; border: 2px dashed var(--rosa); font-weight: 700; }
+    .btn-ws-pago { background: linear-gradient(135deg, #25D366, #20BA5A); color: white; padding: 14px; border-radius: 15px; text-decoration: none; font-weight: 700; display: block; text-align: center; margin-top: 15px; font-size: 1rem; }
     .btn-ws-pago::before { content: "📸 "; }
-    .aclaraciones-modal {
-        background: #FFE4F1;
-        padding: 12px;
-        border-radius: 15px;
-        margin-top: 15px;
-        border: 2px dashed var(--rosa-fuerte);
-        font-size: 0.85rem;
-        text-align: left;
-    }
-    .aclaraciones-modal b { color: var(--rosa-fuerte); }
+    .aclaraciones-modal { background: #FFE4F1; padding: 12px; border-radius: 15px; margin-top: 15px; border: 2px dashed var(--rosa-fuerte); font-size: 0.85rem; text-align: left; }
 </style>
 </head>
 <body>
@@ -212,47 +84,117 @@
         </div>
     </section>
 
-    <!-- ACLARACIONES GENERALES -->
+    <section>
+        <h2>Pases Booyah FF</h2>
+        <div class="card">
+            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('1 Pase Booyah', '$35 MXN')">Comprar</button></span></div>
+            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-comprar" onclick="abrirModal('3 Pases Booyah', '$100 MXN')">Comprar</button></span></div>
+            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-comprar" onclick="abrirModal('5 Pases Booyah', '$165 MXN')">Comprar</button></span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Plantillas</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Plantilla de Ventas</h3>
+                <div class="item"><span>6 espacios</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('Plantilla de Ventas 6 espacios', '$25 MXN')">Comprar</button></span></div>
+                <div class="item"><span>12 espacios</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('Plantilla de Ventas 12 espacios', '$35 MXN')">Comprar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>Plantilla de Referencia</h3>
+                <div class="item"><span>Personalizada</span><span><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="abrirModal('Plantilla de Referencia', '$15 MXN')">Comprar</button></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Stickers & Diseños</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Stickers 3D</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker 3D', '$7 MXN')">Comprar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers 3D', '$24 MXN')">Comprar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers 3D', '$35 MXN')">Comprar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>Stickers Básicos</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker Básico', '$5 MXN')">Comprar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers Básicos', '$15 MXN')">Comprar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers Básicos', '$25 MXN')">Comprar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>Fotos de Perfil</h3>
+                <div class="item"><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('Foto de Perfil', '$25 MXN')">Comprar</button></div>
+            </div>
+            <div class="card">
+                <h3>Fondos para WhatsApp</h3>
+                <div class="item"><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="abrirModal('Fondo WhatsApp con marca de agua', '$15 MXN')">Comprar</button></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Calígrafos</h2>
+        <div class="card">
+            <div class="item"><span>Normal</span><span><span class="precio">$20 MXN</span> <button class="btn-comprar" onclick="abrirModal('Calígrafo Normal', '$20 MXN')">Comprar</button></span></div>
+            <div class="item"><span>Temático</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('Calígrafo Temático', '$25 MXN')">Comprar</button></span></div>
+            <div class="item"><span>Curvo</span><span><span class="precio">$30 MXN</span> <button class="btn-comprar" onclick="abrirModal('Calígrafo Curvo', '$30 MXN')">Comprar</button></span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Métodos de Pago</h2>
+        <div class="grid">
+            <div class="card pago-box">
+                <h4>Transferencia</h4>
+                <div class="dato"><span><b>Clabe:</b> 722969020557739090</span></div>
+                <div class="dato"><span><b>Banco:</b> Mercado Pago W</span></div>
+                <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
+            </div>
+            <div class="card pago-box">
+                <h4>Depósito OXXO</h4>
+                <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img">
+                <div class="dato"><span><b>Tarjeta:</b> 2242 1705 8094 4924</span></div>
+                <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
+            </div>
+        </div>
+    </section>
+
     <div class="nota">
         <h3>📢 Aclaraciones</h3>
         <p>🚫 <b>No inicio trabajos NO PAGADOS</b><br>
-        ⏰ <b>Demora:</b> Dependiendo del pedido entre 2 a 3 días<br>
+        ⏰ <b>Demora:</b> 2 a 3 días<br>
         💤 <b>Horario:</b> Viernes, Sábado y Domingo descanso<br>
-        📸 <b>Importante:</b> Envía tu comprobante de pago por WhatsApp</p>
+        📸 <b>Importante:</b> Envía tu comprobante de pago</p>
     </div>
 
 </div>
 
-<!-- VENTANA MODAL DE PAGO -->
 <div id="modalPago" class="modal">
     <div class="modal-content">
         <span class="close" onclick="cerrarModal()">&times;</span>
         <h3>Métodos de Pago</h3>
         <div class="producto-seleccionado" id="productoSeleccionado"></div>
-        
         <div class="pago-box" style="margin-bottom:15px;">
             <h4 style="font-size:1.1rem;">Transferencia</h4>
             <div class="dato"><span><b>Clabe:</b> 722969020557739090</span></div>
             <div class="dato"><span><b>Banco:</b> Mercado Pago W</span></div>
             <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
         </div>
-
         <div class="pago-box">
             <h4 style="font-size:1.1rem;">Depósito OXXO</h4>
             <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img" style="width:160px; height:160px;">
             <div class="dato"><span><b>Tarjeta:</b> 2242 1705 8094 4924</span></div>
             <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
         </div>
-
-        <!-- ACLARACIONES DENTRO DEL MODAL -->
         <div class="aclaraciones-modal">
-            <b>📢 Aclaraciones Importantes:</b><br>
+            <b>📢 Aclaraciones:</b><br>
             🚫 No inicio trabajos NO PAGADOS<br>
-            ⏰ Demora: 2 a 3 días dependiendo del pedido<br>
+            ⏰ Demora: 2 a 3 días<br>
             💤 Viernes, Sábado y Domingo descanso<br>
-            📸 Envíame tu comprobante por WhatsApp
+            📸 Envíame tu comprobante
         </div>
-
         <a href="#" id="btnWhatsAppPago" class="btn-ws-pago" target="_blank">Ya realicé mi pago, aquí está mi comprobante</a>
     </div>
 </div>
@@ -264,29 +206,22 @@
 
 <script>
 let productoActual = "";
-
 function abrirModal(producto, precio) {
     productoActual = `${producto} - ${precio}`;
     document.getElementById("productoSeleccionado").innerHTML = `🐰 Estás comprando: <br> <b>${productoActual}</b>`;
-    
     let mensaje = `Hola Solecito! 🌸🐰 Ya realicé mi pago de: ${productoActual}. Te envío mi comprobante 📸`;
     let url = `https://wa.me/525662971913?text=${encodeURIComponent(mensaje)}`;
     document.getElementById("btnWhatsAppPago").href = url;
-    
     document.getElementById("modalPago").style.display = "block";
 }
-
 function cerrarModal() {
     document.getElementById("modalPago").style.display = "none";
 }
-
 window.onclick = function(event) {
     let modal = document.getElementById("modalPago");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    if (event.target == modal) { modal.style.display = "none"; }
 }
 </script>
 
 </body>
-</html>
+                </html>
