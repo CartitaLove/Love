@@ -111,11 +111,12 @@
         height: 100%;
         background: rgba(0,0,0,0.5);
         animation: fadeIn 0.3s;
+        overflow-y: auto;
     }
     @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
     .modal-content {
         background: linear-gradient(135deg, #FFFFFF, #FFF0F5);
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 25px;
         border-radius: 25px;
         width: 90%;
@@ -165,6 +166,16 @@
         font-size: 1rem;
     }
     .btn-ws-pago::before { content: "📸 "; }
+    .aclaraciones-modal {
+        background: #FFE4F1;
+        padding: 12px;
+        border-radius: 15px;
+        margin-top: 15px;
+        border: 2px dashed var(--rosa-fuerte);
+        font-size: 0.85rem;
+        text-align: left;
+    }
+    .aclaraciones-modal b { color: var(--rosa-fuerte); }
 </style>
 </head>
 <body>
@@ -201,32 +212,14 @@
         </div>
     </section>
 
-    <section>
-        <h2>Pases Booyah FF</h2>
-        <div class="card">
-            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('1 Pase Booyah', '$35 MXN')">Comprar</button></span></div>
-            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-comprar" onclick="abrirModal('3 Pases Booyah', '$100 MXN')">Comprar</button></span></div>
-            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-comprar" onclick="abrirModal('5 Pases Booyah', '$165 MXN')">Comprar</button></span></div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Stickers & Diseños</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Stickers 3D</h3>
-                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker 3D', '$7 MXN')">Comprar</button></span></div>
-                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers 3D', '$24 MXN')">Comprar</button></span></div>
-                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers 3D', '$35 MXN')">Comprar</button></span></div>
-            </div>
-            <div class="card">
-                <h3>Stickers Básicos</h3>
-                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker Básico', '$5 MXN')">Comprar</button></span></div>
-                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers Básicos', '$15 MXN')">Comprar</button></span></div>
-                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers Básicos', '$25 MXN')">Comprar</button></span></div>
-            </div>
-        </div>
-    </section>
+    <!-- ACLARACIONES GENERALES -->
+    <div class="nota">
+        <h3>📢 Aclaraciones</h3>
+        <p>🚫 <b>No inicio trabajos NO PAGADOS</b><br>
+        ⏰ <b>Demora:</b> Dependiendo del pedido entre 2 a 3 días<br>
+        💤 <b>Horario:</b> Viernes, Sábado y Domingo descanso<br>
+        📸 <b>Importante:</b> Envía tu comprobante de pago por WhatsApp</p>
+    </div>
 
 </div>
 
@@ -249,6 +242,15 @@
             <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img" style="width:160px; height:160px;">
             <div class="dato"><span><b>Tarjeta:</b> 2242 1705 8094 4924</span></div>
             <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
+        </div>
+
+        <!-- ACLARACIONES DENTRO DEL MODAL -->
+        <div class="aclaraciones-modal">
+            <b>📢 Aclaraciones Importantes:</b><br>
+            🚫 No inicio trabajos NO PAGADOS<br>
+            ⏰ Demora: 2 a 3 días dependiendo del pedido<br>
+            💤 Viernes, Sábado y Domingo descanso<br>
+            📸 Envíame tu comprobante por WhatsApp
         </div>
 
         <a href="#" id="btnWhatsAppPago" class="btn-ws-pago" target="_blank">Ya realicé mi pago, aquí está mi comprobante</a>
@@ -278,7 +280,6 @@ function cerrarModal() {
     document.getElementById("modalPago").style.display = "none";
 }
 
-// Cerrar al dar click fuera
 window.onclick = function(event) {
     let modal = document.getElementById("modalPago");
     if (event.target == modal) {
