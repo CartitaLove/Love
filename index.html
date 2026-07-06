@@ -3,30 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY ROMINA ❤️</title>
+<title>Solecito Shopp 🌸 - Diamantes FF y Diseños</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Dancing+Script:wght@700&display=swap');
-body{margin:0; background:#1a1a2e; display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; font-family:'Poppins', sans-serif; overflow:hidden; padding:10px}
-h2{color:white; text-align:center; margin:0; font-size:1.4em}
-.sub{color:#ffc1e3; text-align:center; margin:5px 0 15px 0; font-size:0.8em}
-.libro{width:90vw; height:70vh; max-width:350px; max-height:500px; position:relative}
-.pagina{width:100%; height:100%; position:absolute; background:white; border-radius:12px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); transform-origin: left; transition: transform 0.8s ease; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px; cursor:pointer}
-.pagina h3{font-family:'Dancing Script', cursive; font-size:1.6em; color:#764ba2; margin:5px 0; text-align:center}
-.pagina p{color:#333; text-align:center; font-size:0.95em}
-.portada{background: linear-gradient(135deg, #f093fb, #f5576c); color:white}
-.portada h3{color:white; font-size:2.2em}
-.btn{background:#25D366; color:white; padding:12px 25px; border-radius:25px; text-decoration:none; font-weight:600; margin-top:10px}
+    :root {
+        --rosa: #FF69B4;
+        --rosa-claro: #FFB6D9;
+        --blanco: #FFF0F5;
+        --texto: #4A2C2A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--blanco); color: var(--texto); }
+    header { background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); padding: 20px; text-align: center; color: white; position: sticky; top: 0; z-index: 10; }
+    header h1 { font-size: 2rem; }
+    .btn-whatsapp { background: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; }
+    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    h2 { text-align: center; color: var(--rosa); margin-bottom: 25px; font-size: 1.8rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2); border: 2px solid var(--rosa-claro); }
+    .card h3 { color: var(--rosa); margin-bottom: 10px; }
+    .item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; padding: 8px; background: var(--blanco); border-radius: 10px; }
+    .precio { font-weight: 700; color: var(--rosa); }
+    .btn-copy { background: var(--rosa); color: white; border: none; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .btn-copy:active { transform: scale(0.95); }
+    .nota { background: var(--rosa-claro); padding: 15px; border-radius: 15px; margin-top: 30px; text-align: center; }
+    footer { background: var(--rosa); color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--rosa); color: white; padding: 12px 20px; border-radius: 50px; display: none; z-index: 99; }
 </style>
 </head>
 <body>
-<h2>✨MY ROMINA❤️</h2>
-<p class="sub">Te mentí, no me fui a dormir... te hice esto 💜</p>
-<div class="libro">
-    <div class="pagina portada" onclick="this.style.transform='rotateY(-180deg)'"><h3>Te Amo</h3><p>Para Romina De La Cruz</p><p style="font-size:0.8em">Toca para pasar ➡️</p></div>
-    <div class="pagina" onclick="this.style.transform='rotateY(-180deg)'"><div style="font-size:4em">💜</div><p>Tú y Yo, los dos juntitos</p></div>
-    <div class="pagina" onclick="this.style.transform='rotateY(-180deg)'"><h3>Te amo Mucho</h3><p style="font-size:2em">❤️</p></div>
-    <div class="pagina" onclick="this.style.transform='rotateY(-180deg)'"><div style="font-size:3em">🚀</div><p>Contigo, hasta el infinito</p></div>
-    <div class="pagina" onclick="this.style.transform='rotateY(-180deg)'"><div style="font-size:3em">🐸🌷</div><h3>Recuerda que te AMO Mucho</h3><a href="https://wa.me/51936994155" class="btn">Respóndeme</a></div>
+
+<header>
+    <h1>🌸 Solecito Shopp 🌸</h1>
+    <p>Diamantes FF • Diseños • Stickers • Arte</p>
+    <a href="https://wa.me/525662971913" target="_blank" class="btn-whatsapp">Pedir por WhatsApp 🐰</a>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>💎 Diamantes Free Fire</h2>
+        <div class="card">
+            <div class="item"><span>110 Diamantes</span><span><span class="precio">$18 MXN</span> <button class="btn-copy" onclick="copiar('110 Diamantes - $18 MXN')">Copiar</button></span></div>
+            <div class="item"><span>341 Diamantes</span><span><span class="precio">$60 MXN</span> <button class="btn-copy" onclick="copiar('341 Diamantes - $60 MXN')">Copiar</button></span></div>
+            <div class="item"><span>572 Diamantes</span><span><span class="precio">$86 MXN</span> <button class="btn-copy" onclick="copiar('572 Diamantes - $86 MXN')">Copiar</button></span></div>
+            <div class="item"><span>1166 Diamantes</span><span><span class="precio">$175 MXN</span> <button class="btn-copy" onclick="copiar('1166 Diamantes - $175 MXN')">Copiar</button></span></div>
+            <div class="item"><span>2398 Diamantes</span><span><span class="precio">$340 MXN</span> <button class="btn-copy" onclick="copiar('2398 Diamantes - $340 MXN')">Copiar</button></span></div>
+            <div class="item"><span>6160 Diamantes</span><span><span class="precio">$750 MXN</span> <button class="btn-copy" onclick="copiar('6160 Diamantes - $750 MXN')">Copiar</button></span></div>
+            <p><b>Otras cantidades se cotizan ✨</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎟️ Pases Booyah FF</h2>
+        <div class="card">
+            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-copy" onclick="copiar('1 Pase Booyah - $35 MXN')">Copiar</button></span></div>
+            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-copy" onclick="copiar('3 Pases Booyah - $100 MXN')">Copiar</button></span></div>
+            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-copy" onclick="copiar('5 Pases Booyah - $165 MXN')">Copiar</button></span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🐰 Stickers & Diseños</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Stickers 3D</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-copy" onclick="copiar('Sticker 3D - $7 MXN')">Copiar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-copy" onclick="copiar('4 Stickers 3D - $24 MXN')">Copiar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-copy" onclick="copiar('6 Stickers 3D - $35 MXN')">Copiar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>Stickers Básicos</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-copy" onclick="copiar('Sticker Básico - $5 MXN')">Copiar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-copy" onclick="copiar('4 Stickers Básicos - $15 MXN')">Copiar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('6 Stickers Básicos - $25 MXN')">Copiar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>Foto de Perfil</h3>
+                <div class="item"><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('Foto de Perfil - $25 MXN')">Copiar</button></div>
+            </div>
+            <div class="card">
+                <h3>Fondo WhatsApp</h3>
+                <div class="item"><span class="precio">$15 MXN</span> <button class="btn-copy" onclick="copiar('Fondo WhatsApp con marca de agua - $15 MXN')">Copiar</button></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>✍️ Calígrafos</h2>
+        <div class="card">
+            <div class="item"><span>Normal</span><span><span class="precio">$20 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Normal - $20 MXN')">Copiar</button></span></div>
+            <div class="item"><span>Temático</span><span><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Temático - $25 MXN')">Copiar</button></span></div>
+            <div class="item"><span>Curvo</span><span><span class="precio">$30 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Curvo - $30 MXN')">Copiar</button></span></div>
+        </div>
+    </section>
+
+    <div class="nota">
+        <h3>📢 Aclaraciones Importantes</h3>
+        <p>🚫 <b>No inicio trabajos NO PAGADOS</b><br>
+        ⏰ Demora: 2 a 3 días dependiendo del pedido<br>
+        💤 Viernes, Sábado y Domingo descanso<br>
+        💳 <b>Métodos de pago:</b> Transferencia MX o Depósito Oxxo</p>
+    </div>
+
 </div>
+
+<footer>
+    <p><b>Sígueme 🌸</b></p>
+    <p>FB: Solecito Shopp | IG: Solecito_artistic</p>
+    <a href="https://wa.me/525662971913" target="_blank" class="btn-whatsapp">+52 56 6297 1913</a>
+</footer>
+
+<div class="toast" id="toast">✅ Copiado al portapeles!</div>
+
+<script>
+function copiar(texto) {
+    navigator.clipboard.writeText(texto);
+    let toast = document.getElementById("toast");
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2000);
+}
+</script>
+
 </body>
 </html>
