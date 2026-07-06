@@ -3,140 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para mi Romina ❤️</title>
+<title>MY ROMINA ❤️</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Dancing+Script:wght@700&display=swap');
 body{
-    margin:0; 
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-    background-size: 300% 300%;
-    animation: gradient 8s ease infinite;
-    display:flex; justify-content:center; align-items:center; 
-    height:100vh; color:white; text-align:center;
-    overflow:hidden; padding:20px;
+    margin:0; background:#1a1a2e; 
+    display:flex; justify-content:center; align-items:center;
+    height:100vh; font-family:'Poppins', sans-serif; overflow:hidden;
 }
-@keyframes gradient {
-    0%{background-position: 0% 50%}
-    50%{background-position: 100% 50%}
-    100%{background-position: 0% 50%}
+h2{color:white; text-align:center; position:absolute; top:30px}
+.sub{color:#ffc1e3; text-align:center; position:absolute; top:80px; font-size:0.9em}
+.libro{
+    width:320px; height:450px; position:relative;
+    perspective: 1500px;
 }
-.sobre{
-    width:320px; height:210px; background:#fff; border-radius:15px;
-    position:relative; cursor:pointer; transition:0.5s;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+.pagina{
+    width:100%; height:100%; position:absolute;
+    background:white; border-radius:10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform-origin: left;
+    transition: transform 1s;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    padding:20px; box-sizing:border-box;
+    cursor:pointer;
 }
-.sobre:hover{transform: scale(1.08) rotate(-1deg);}
-.tapa{
-    position:absolute; width:0; height:0; border-left:160px solid transparent;
-    border-right:160px solid transparent; border-bottom:105px solid #ffc1e3;
-    top:0; left:0; border-radius:15px 15px 0 0;
-}
-.carta{
-    display:none; padding:45px 35px; max-width:550px; 
-    background: rgba(255,255,255,0.15); backdrop-filter: blur(15px);
-    border-radius:25px; border:1px solid rgba(255,255,255,0.2);
-    animation: aparecer 1s ease;
-}
-@keyframes aparecer {
-    from{opacity:0; transform: translateY(30px)}
-    to{opacity:1; transform: translateY(0)}
-}
-h1{
-    font-family: 'Dancing Script', cursive; 
-    font-size:2.5em; margin-bottom:15px; color:#ffc1e3
-}
-p{font-size:1.15em; line-height:1.9; font-weight:300; margin-bottom:15px}
-.frase-bonita{
-    font-style: italic; font-size:1.1em; color:#ffc1e3; 
-    border-left: 3px solid #ffc1e3; padding-left:15px; margin:20px 0;
-}
-.btn{
-    background: linear-gradient(90deg, #25D366, #128C7E); 
-    color:white; padding:15px 35px; border-radius:50px;
-    text-decoration:none; font-weight:600; display:inline-block; margin-top:25px;
-    box-shadow: 0 5px 15px rgba(37,211,102,0.4); transition:0.3s;
-}
-.btn:hover{transform: scale(1.05)}
-.corazon{position:absolute; font-size:22px; animation:flotar 4s infinite}
-@keyframes flotar{
-    0%{transform:translateY(0) rotate(0deg); opacity:1}
-    100%{transform:translateY(-500px) rotate(360deg); opacity:0}
-.estrellita{position:absolute; font-size:16px; animation:brillar 2s infinite}
-@keyframes brillar{
-    0%,100%{opacity:0.3} 50%{opacity:1}
+.pagina img{width:180px; height:180px; object-fit:contain; margin-bottom:15px}
+.pagina h3{font-family:'Dancing Script', cursive; font-size:1.8em; color:#764ba2; margin:5px 0}
+.pagina p{color:#333; text-align:center; font-size:1em}
+.pagina:nth-child(1){background: linear-gradient(135deg, #f093fb, #f5576c); color:white}
+.pagina:nth-child(1) h3{color:white}
+.portada h3{font-size:2.5em}
 </style>
 </head>
 <body>
 
-<div class="sobre" onclick="abrirCarta()">
-    <div class="tapa"></div>
-    <p style="color:#764ba2; padding-top:85px; font-weight:600; font-size:1.1em">Para Romina ❤️<br>Toca aquí mi amor</p>
-</div>
+<h2>✨MY ROMINA❤️</h2>
+<p class="sub">16 páginas - Te mentí, no me fui a dormir, fui a hacerte esto</p>
 
-<div class="carta" id="carta">
-    <h1>Para Romina De La Cruz</h1>
-    <p id="texto-carta">
-    Mi Romina hermosa,
-    
-    Solo quería recordarte algo hoy: "solo porque sí".
-
-    Me pierdo en tus ojos cada vez que me miras. Tienen algo mágico, como si en ellos cupiera toda la calma y toda la locura bonita del mundo a la vez. Son mi lugar favorito.
-    
-    <div class="frase-bonita">
-    "Eres de esas personas que hacen que los días normales se sientan como magia"
+<div class="libro" id="libro">
+    <!-- PAGINA 1 PORTADA -->
+    <div class="pagina portada" onclick="pasarPagina(0)">
+        <h3>Te Amo ❤️</h3>
+        <p>Para Romina De La Cruz</p>
+        <p style="font-size:0.8em">Toca para pasar</p>
     </div>
-
-    Amo tu risa, amo como arrugas la nariz cuando te concentras, amo tus abrazos que curan todo, amo hasta tus enojos porque significan que te importo.
     
-    Gracias por existir. Gracias por dejarme quererte así, sin apuro, sin medida y con todo mi corazón. 
-    Prometo cuidarte, hacerte reír, y recordarte todos los días lo increíble que eres.
-    
-    Si algún día dudas de lo mucho que significas para mí, vuelve a abrir esta carta. 
-    
-    Aquí siempre va a haber un "te pienso", un "te extraño" y un "te amo" esperándote 💜
-    
-    <div class="frase-bonita">
-    PD: Eres mi persona favorita en todo este universo.
+    <!-- PAGINA 2 -->
+    <div class="pagina" onclick="pasarPagina(1)">
+        <img src="https://i.imgur.com/8QfXh3L.png" alt="corazones playa">
+        <p>Tú y Yo, los dos juntitos 💜</p>
     </div>
-    </p>
     
-    <a href="https://wa.me/51936994155?text=Yo%20también%20te%20quiero%20mucho%20mi%20amor%20❤️" class="btn">Respóndeme con un te quiero</a>
+    <!-- PAGINA 3 -->
+    <div class="pagina" onclick="pasarPagina(2)">
+        <h3>Te amo Mucho</h3>
+        <p>❤️ ❤️</p>
+    </div>
+    
+    <!-- PAGINA 4 -->
+    <div class="pagina" onclick="pasarPagina(3)">
+        <img src="https://i.imgur.com/5Qb2vQZ.png" alt="buzz y jessie">
+        <p>Contigo, hasta el infinito y más Allá</p>
+    </div>
+    
+    <!-- PAGINA 5 -->
+    <div class="pagina" onclick="pasarPagina(4)">
+        <img src="https://i.imgur.com/kXq9pZv.png" alt="furias">
+        <p>Habitamos en mi Corazón</p>
+    </div>
+    
+    <!-- PAGINA 6 -->
+    <div class="pagina" onclick="pasarPagina(5)">
+        <img src="https://i.imgur.com/2mY3bKq.png" alt="spiderman hello kitty">
+        <p>Quiero pasar el resto de mis días a tu lado <3</p>
+    </div>
+    
+    <!-- PAGINA 7 -->
+    <div class="pagina" onclick="pasarPagina(6)">
+        <h3>Te amo Con todo Mi ❤️</h3>
+    </div>
+    
+    <!-- PAGINA 8 -->
+    <div class="pagina" onclick="pasarPagina(7)">
+        <img src="https://i.imgur.com/4z3j8QW.png" alt="aliens">
+        <p>Solo tengo ojos para ti</p>
+    </div>
+    
+    <!-- PAGINA 9 -->
+    <div class="pagina" onclick="pasarPagina(8)" style="background:black">
+        <h3 style="color:white; font-size:2.5em">I ❤️ ROMINA</h3>
+    </div>
+    
+    <!-- PAGINA 10 -->
+    <div class="pagina" onclick="pasarPagina(9)" style="background:#fff9c4">
+        <h3>tú eres mi rayito de SOL</h3>
+    </div>
+    
+    <!-- PAGINA 11 -->
+    <div class="pagina" onclick="pasarPagina(10)" style="background:#ffc1e3">
+        <p>Contigo me siento en las nubes</p>
+    </div>
+    
+    <!-- PAGINA 12 -->
+    <div class="pagina" onclick="pasarPagina(11)">
+        <h3>Romina ama SU osito</h3>
+        <p>🧸</p>
+    </div>
+    
+    <!-- PAGINA 13 -->
+    <div class="pagina" onclick="pasarPagina(12)">
+        <h3>Mi MIRADA CAMBIO...</h3>
+        <p>CUANDO TUS OJOS VÍ</p>
+    </div>
+    
+    <!-- PAGINA 14 -->
+    <div class="pagina" onclick="pasarPagina(13)">
+        <h3>PONE FEO...</h3>
+        <p>TU ME LO HACES BONITO</p>
+    </div>
+    
+    <!-- PAGINA 15 -->
+    <div class="pagina" onclick="pasarPagina(14)">
+        <p>Te amo con cada de mi corazun... ❤️</p>
+    </div>
+    
+    <!-- PAGINA 16 FINAL -->
+    <div class="pagina" onclick="pasarPagina(15)" style="background:#dcedc8">
+        <img src="https://i.imgur.com/9mLz4Np.png" alt="rana">
+        <h3>Recuerda que te AMO Mucho</h3>
+        <a href="https://wa.me/51936994155" style="margin-top:15px; background:#25D366; color:white; padding:10px 20px; border-radius:20px; text-decoration:none">Respóndeme</a>
+    </div>
 </div>
-
-<audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
 
 <script>
-function abrirCarta(){
-    document.querySelector('.sobre').style.display = 'none';
-    document.getElementById('carta').style.display = 'block';
-    document.getElementById('musica').play();
-    soltarCorazones();
-    soltarEstrellas();
-}
-function soltarCorazones(){
-    const emojis = ['💜','💖','✨','🌸','🦋'];
-    for(let i=0; i<25; i++){
-        let elemento = document.createElement('div');
-        elemento.className = Math.random() > 0.5 ? 'corazon' : 'estrellita';
-        elemento.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
-        elemento.style.left = Math.random()*100 + 'vw';
-        elemento.style.top = '100vh';
-        elemento.style.animationDelay = Math.random()*2 + 's';
-        document.body.appendChild(elemento);
-        setTimeout(()=>elemento.remove(), 4000);
-    }
-}
-function soltarEstrellas(){
-    for(let i=0; i<10; i++){
-        let estrella = document.createElement('div');
-        estrella.className = 'estrellita';
-        estrella.innerHTML = '✨';
-        estrella.style.left = Math.random()*100 + 'vw';
-        estrella.style.top = Math.random()*100 + 'vh';
-        document.body.appendChild(estrella);
+let paginaActual = 0;
+const paginas = document.querySelectorAll('.pagina');
+
+function pasarPagina(i){
+    if(paginaActual < paginas.length){
+        paginas[paginaActual].style.transform = 'rotateY(-180deg)';
+        paginaActual++;
     }
 }
 </script>
