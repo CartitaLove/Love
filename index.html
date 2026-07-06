@@ -9,15 +9,20 @@
     :root {
         --rosa: #FF69B4;
         --rosa-claro: #FFB6D9;
+        --rosa-bebe: #FFE4F1;
         --blanco: #FFF0F5;
         --texto: #4A2C2A;
+        --promo: #FF1493;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { 
-        background: var(--blanco); 
+        background: linear-gradient(135deg, var(--rosa-bebe) 0%, var(--blanco) 50%, var(--rosa-claro) 100%);
+        background-image: 
+            radial-gradient(circle at 20px 20px, rgba(255, 105, 180, 0.15) 3px, transparent 0),
+            radial-gradient(circle at 60px 60px, rgba(255, 105, 180, 0.1) 2px, transparent 0);
+        background-size: 80px 80px, 120px 120px;
         color: var(--texto);
-        background-image: url('https://i.ibb.co/6yM3g8N/hello-kitty-bunny-pattern.png');
-        background-size: 200px;
+        min-height: 100vh;
     }
     header { 
         background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); 
@@ -29,50 +34,129 @@
         z-index: 10;
         box-shadow: 0 4px 20px rgba(255,105,180,0.3);
     }
-    header h1 { font-size: 2.5rem; }
-    .btn-whatsapp { 
-        background: #25D366; 
-        color: white; 
-        padding: 14px 28px; 
-        border-radius: 50px; 
-        text-decoration: none; 
-        font-weight: 700; 
-        display: inline-block; 
-        margin-top: 15px;
-    }
+    header h1 { font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .btn-whatsapp { background: #25D366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.4); }
     .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
     h2 { text-align: center; color: var(--rosa); margin-bottom: 25px; font-size: 2rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card { 
-        background: white; 
-        border-radius: 20px; 
-        padding: 20px; 
-        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.25); 
-        border: 3px solid var(--rosa-claro);
-    }
-    .item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; padding: 10px; background: var(--blanco); border-radius: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card { background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 6px 20px rgba(255, 105, 180, 0.25); border: 3px solid var(--rosa-claro); backdrop-filter: blur(5px); }
+    .promo-card { border: 3px dashed var(--promo); background: linear-gradient(135deg, rgba(255, 228, 241, 0.95), rgba(255,255,255,0.95)); }
+    .promo-tag { background: var(--promo); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+    .card h3 { color: var(--rosa); margin-bottom: 15px; text-align: center; font-size: 1.3rem; }
+    .item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; padding: 10px; background: rgba(255, 240, 245, 0.8); border-radius: 12px; }
     .precio { font-weight: 700; color: var(--rosa); font-size: 1.1rem; }
+    .precio-promo { font-weight: 700; color: var(--promo); font-size: 1.1rem; }
     .btn-copy { background: var(--rosa); color: white; border: none; padding: 7px 14px; border-radius: 10px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
-    .pago-box { background: linear-gradient(135deg, var(--rosa-claro), white); border: 3px dashed var(--rosa); padding: 20px; border-radius: 20px; text-align: center; }
-    .pago-box h4 { color: var(--rosa); margin-bottom: 10px; font-size: 1.2rem; }
-    .dato { background: white; padding: 12px; border-radius: 12px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--rosa-claro); text-align: left; }
-    .qr-img { width: 220px; height: 220px; border-radius: 15px; border: 4px solid var(--rosa); margin: 15px auto; display: block; }
+    .btn-copy-promo { background: var(--promo); color: white; border: none; padding: 7px 14px; border-radius: 10px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .pago-box { background: linear-gradient(135deg, rgba(255, 182, 217, 0.95), rgba(255,255,255,0.95)); border: 3px dashed var(--rosa); padding: 20px; border-radius: 20px; text-align: center; }
+    .dato { background: rgba(255, 255, 255, 0.9); padding: 12px; border-radius: 12px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--rosa-claro); }
+    .qr-img { width: 220px; height: 220px; border-radius: 15px; border: 4px solid var(--rosa); margin: 15px auto; display: block; background: white; padding: 10px; }
     .nota { background: var(--rosa-claro); padding: 20px; border-radius: 20px; margin-top: 30px; text-align: center; border: 2px solid var(--rosa); }
+    .alerta { background: #FFF0F5; border-left: 4px solid var(--promo); padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.9rem; }
     footer { background: var(--rosa); color: white; text-align: center; padding: 30px 20px; margin-top: 40px; }
     .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--rosa); color: white; padding: 14px 24px; border-radius: 50px; display: none; z-index: 99; font-weight: 600; }
+    .nota-text { font-size: 0.9rem; text-align: center; margin-top: 8px; color: #666; }
 </style>
 </head>
 <body>
 
 <header>
     <h1>🌸 Solecito Shopp 🌸</h1>
-    <p>🐰 Diamantes FF • Diseños • Stickers • Arte 💖</p>
+    <p>🐰 Diamantes FF • Diseños • Plantillas • Arte 💖</p>
     <a href="https://wa.me/525662971913" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
 </header>
 
 <div class="container">
 
-    <!-- SECCIONES DE PRECIOS IGUALES -->
+    <section>
+        <h2>💎 Diamantes de Free Fire</h2>
+        <div class="card">
+            <div class="item"><span>110 Diamantes</span><span><span class="precio">$18 MXN</span> <button class="btn-copy" onclick="copiar('110 Diamantes - $18 MXN')">Copiar</button></span></div>
+            <div class="item"><span>341 Diamantes</span><span><span class="precio">$60 MXN</span> <button class="btn-copy" onclick="copiar('341 Diamantes - $60 MXN')">Copiar</button></span></div>
+            <div class="item"><span>572 Diamantes</span><span><span class="precio">$86 MXN</span> <button class="btn-copy" onclick="copiar('572 Diamantes - $86 MXN')">Copiar</button></span></div>
+            <div class="item"><span>1166 Diamantes</span><span><span class="precio">$175 MXN</span> <button class="btn-copy" onclick="copiar('1166 Diamantes - $175 MXN')">Copiar</button></span></div>
+            <div class="item"><span>2398 Diamantes</span><span><span class="precio">$340 MXN</span> <button class="btn-copy" onclick="copiar('2398 Diamantes - $340 MXN')">Copiar</button></span></div>
+            <div class="item"><span>6160 Diamantes</span><span><span class="precio">$750 MXN</span> <button class="btn-copy" onclick="copiar('6160 Diamantes - $750 MXN')">Copiar</button></span></div>
+            <p class="nota-text"><b>Otras cantidades se cotizan ✨</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔥 PROMO: Diamantes Una Vez por ID 🔥</h2>
+        <div class="card promo-card">
+            <span class="promo-tag">SOLO 1 VEZ POR CUENTA</span>
+            <div class="item"><span>110 Diamantes</span><span><span class="precio-promo">$13 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 110 Diamantes - $13 MXN')">Copiar</button></span></div>
+            <div class="item"><span>341 Diamantes</span><span><span class="precio-promo">$35 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 341 Diamantes - $35 MXN')">Copiar</button></span></div>
+            <div class="item"><span>572 Diamantes</span><span><span class="precio-promo">$55 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 572 Diamantes - $55 MXN')">Copiar</button></span></div>
+            <div class="item"><span>1166 Diamantes</span><span><span class="precio-promo">$120 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 1166 Diamantes - $120 MXN')">Copiar</button></span></div>
+            <div class="item"><span>2398 Diamantes</span><span><span class="precio-promo">$220 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 2398 Diamantes - $220 MXN')">Copiar</button></span></div>
+            <div class="item"><span>6160 Diamantes</span><span><span class="precio-promo">$520 MXN</span> <button class="btn-copy-promo" onclick="copiar('PROMO ID: 6160 Diamantes - $520 MXN')">Copiar</button></span></div>
+            <div class="alerta">
+                ⚠️ <b>Importante:</b> Se checa ID antes de cada compra. Solo aplica 1 vez por cuenta.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎟️ Pases Booyah FF</h2>
+        <div class="card">
+            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-copy" onclick="copiar('1 Pase Booyah - $35 MXN')">Copiar</button></span></div>
+            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-copy" onclick="copiar('3 Pases Booyah - $100 MXN')">Copiar</button></span></div>
+            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-copy" onclick="copiar('5 Pases Booyah - $165 MXN')">Copiar</button></span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📋 Plantillas</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📢 Plantilla de Ventas</h3>
+                <div class="item"><span>6 espacios</span><span><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('Plantilla de Ventas 6 espacios - $25 MXN')">Copiar</button></span></div>
+                <div class="item"><span>12 espacios</span><span><span class="precio">$35 MXN</span> <button class="btn-copy" onclick="copiar('Plantilla de Ventas 12 espacios - $35 MXN')">Copiar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>🎨 Plantilla de Referencia</h3>
+                <div class="item"><span>Personalizada</span><span><span class="precio">$15 MXN</span> <button class="btn-copy" onclick="copiar('Plantilla de Referencia - $15 MXN')">Copiar</button></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🐰 Stickers & Diseños</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Stickers 3D</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-copy" onclick="copiar('Sticker 3D - $7 MXN')">Copiar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-copy" onclick="copiar('4 Stickers 3D - $24 MXN')">Copiar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-copy" onclick="copiar('6 Stickers 3D - $35 MXN')">Copiar</button></span></div>
+                <p class="nota-text"><b>Otras cantidades se cotizan</b></p>
+            </div>
+            <div class="card">
+                <h3>Stickers Básicos</h3>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-copy" onclick="copiar('Sticker Básico - $5 MXN')">Copiar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-copy" onclick="copiar('4 Stickers Básicos - $15 MXN')">Copiar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('6 Stickers Básicos - $25 MXN')">Copiar</button></span></div>
+            </div>
+            <div class="card">
+                <h3>📸 Fotos de Perfil</h3>
+                <div class="item"><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('Foto de Perfil - $25 MXN')">Copiar</button></div>
+            </div>
+            <div class="card">
+                <h3>🎨 Fondos para WhatsApp</h3>
+                <div class="item"><span class="precio">$15 MXN</span> <button class="btn-copy" onclick="copiar('Fondo WhatsApp con marca de agua - $15 MXN')">Copiar</button></div>
+                <p class="nota-text">Incluye marca de agua 🌸</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>✍️ Calígrafos</h2>
+        <div class="card">
+            <div class="item"><span>Normal</span><span><span class="precio">$20 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Normal - $20 MXN')">Copiar</button></span></div>
+            <div class="item"><span>Temático</span><span><span class="precio">$25 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Temático - $25 MXN')">Copiar</button></span></div>
+            <div class="item"><span>Curvo</span><span><span class="precio">$30 MXN</span> <button class="btn-copy" onclick="copiar('Calígrafo Curvo - $30 MXN')">Copiar</button></span></div>
+        </div>
+    </section>
 
     <section>
         <h2>💳 Métodos de Pago</h2>
@@ -92,7 +176,7 @@
 
             <div class="card pago-box">
                 <h4>🏪 Depósito OXXO / Tarjeta</h4>
-                <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO Solecito Shopp" class="qr-img">
+                <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img">
                 <div class="dato">
                     <span><b>Tarjeta:</b> 2242170580944924</span>
                     <button class="btn-copy" onclick="copiar('2242170580944924')">Copiar</button>
@@ -101,19 +185,14 @@
                     <span><b>Clabe:</b> 722969020557739090</span>
                     <button class="btn-copy" onclick="copiar('722969020557739090')">Copiar</button>
                 </div>
-                <p style="font-size:0.9rem; margin-top:10px;">
-                    <b>Opción 1:</b> Escanea el QR<br>
-                    <b>Opción 2:</b> Deposita a la tarjeta en OXXO<br>
-                    <b>Opción 3:</b> Transferencia con la clabe
-                </p>
             </div>
         </div>
-        <p style="text-align:center; margin-top:15px; font-size:1.1rem;"><b>🚫 No inicio trabajos NO PAGADOS</b><br>📸 Envíame tu comprobante por WhatsApp</p>
     </section>
 
     <div class="nota">
-        <h3>📢 Aclaraciones Importantes</h3>
-        <p>⏰ <b>Demora:</b> 2 a 3 días dependiendo del pedido<br>
+        <h3>📢 Aclaraciones</h3>
+        <p>🚫 <b>No inicio trabajos NO PAGADOS</b><br>
+        ⏰ <b>Demora:</b> Dependiendo del pedido entre 2 a 3 días<br>
         💤 <b>Horario:</b> Viernes, Sábado y Domingo descanso</p>
     </div>
 
@@ -140,4 +219,4 @@ function copiar(texto) {
 </script>
 
 </body>
-</html>
+                 </html>
