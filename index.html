@@ -18,9 +18,7 @@
         background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F1 50%, #FFB6D9 100%);
         color: var(--texto);
         min-height: 100vh;
-        overflow-x: hidden;
     }
-    /* BRILLOS Y CONEJITOS SIN LAG */
     body::before {
         content: "🐰 🎀 ✨ 🐰 🎀 ✨";
         position: fixed;
@@ -32,13 +30,7 @@
         opacity: 0.08;
         z-index: -1;
         pointer-events: none;
-        animation: float 20s linear infinite;
     }
-    @keyframes float {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-100vh); }
-    }
-
     header { 
         background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); 
         padding: 35px 20px; 
@@ -47,7 +39,6 @@
         position: sticky; 
         top: 0; 
         z-index: 10;
-        box-shadow: 0 4px 20px rgba(255,105,180,0.3);
     }
     header h1 { font-size: 2.5rem; font-family: 'Playfair Display', serif; }
     header h1::before { content: "🐰 "; }
@@ -72,7 +63,6 @@
     .precio { font-weight: 700; color: var(--rosa-fuerte); font-size: 1.1rem; }
     .precio-promo { font-weight: 700; color: var(--rosa-fuerte); font-size: 1.1rem; }
     
-    /* BOTON COMPRAR MAS PEQUEÑO Y FEMENINO */
     .btn-comprar { 
         background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); 
         color: white; 
@@ -82,26 +72,17 @@
         cursor: pointer; 
         font-size: 0.8rem; 
         font-weight: 700;
-        box-shadow: 0 2px 6px rgba(255,105,180,0.3);
     }
-    .btn-comprar:hover { transform: scale(1.05); }
     .btn-comprar::before { content: "🛍️ "; }
 
-    /* SECCIÓN PAGOS HELLO KITTY */
     .pago-box { 
         background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); 
         border: 3px solid var(--rosa-fuerte); 
         padding: 25px; 
         border-radius: 25px; 
         text-align: center;
-        box-shadow: 0 8px 25px rgba(255,105,180,0.25);
     }
-    .pago-box h4 { 
-        color: white; 
-        font-size: 1.3rem; 
-        margin-bottom: 15px; 
-        font-family: 'Playfair Display', serif;
-    }
+    .pago-box h4 { color: white; font-size: 1.3rem; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
     .pago-box h4::before { content: "🎀 "; }
     .pago-box h4::after { content: " 🎀"; }
     .dato { 
@@ -115,29 +96,75 @@
         border: 2px solid var(--rosa-claro);
         font-size: 0.9rem;
     }
-    .qr-img { 
-        width: 200px; 
-        height: 200px; 
-        border-radius: 20px; 
-        border: 4px solid white; 
-        margin: 12px auto; 
-        display: block; 
-        background: white; 
-        padding: 10px;
-    }
-    .nota { 
-        background: #FFE4F1; 
-        padding: 20px; 
-        border-radius: 20px; 
-        margin-top: 25px; 
-        text-align: center; 
-        border: 2px dashed var(--rosa);
-    }
-    .alerta { background: #FFF0F5; border-left: 4px solid var(--rosa-fuerte); padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.85rem; }
+    .qr-img { width: 200px; height: 200px; border-radius: 20px; border: 4px solid white; margin: 12px auto; display: block; background: white; padding: 10px; }
+    .nota { background: #FFE4F1; padding: 20px; border-radius: 20px; margin-top: 25px; text-align: center; border: 2px dashed var(--rosa); }
     footer { background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa)); color: white; text-align: center; padding: 35px 20px; margin-top: 40px; }
-    footer::before { content: "🐰 💖 "; }
-    footer::after { content: " 💖 🐰"; }
-    .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--rosa-fuerte); color: white; padding: 14px 24px; border-radius: 50px; display: none; z-index: 99; font-weight: 600; font-size: 0.9rem; }
+
+    /* VENTANA MODAL */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    .modal-content {
+        background: linear-gradient(135deg, #FFFFFF, #FFF0F5);
+        margin: 10% auto;
+        padding: 25px;
+        border-radius: 25px;
+        width: 90%;
+        max-width: 450px;
+        border: 3px solid var(--rosa-fuerte);
+        box-shadow: 0 10px 40px rgba(255,105,180,0.4);
+        position: relative;
+    }
+    .modal-content h3 {
+        color: var(--rosa-fuerte);
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    .modal-content h3::before { content: "🎀 "; }
+    .modal-content h3::after { content: " 🎀"; }
+    .close {
+        color: var(--rosa-fuerte);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    .producto-seleccionado {
+        background: var(--rosa-bebe);
+        padding: 12px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+        border: 2px dashed var(--rosa);
+        font-weight: 700;
+    }
+    .btn-ws-pago {
+        background: linear-gradient(135deg, #25D366, #20BA5A);
+        color: white;
+        padding: 14px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 700;
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1rem;
+    }
+    .btn-ws-pago::before { content: "📸 "; }
 </style>
 </head>
 <body>
@@ -145,7 +172,6 @@
 <header>
     <h1>Solecito Shopp</h1>
     <p>Diamantes FF • Diseños • Plantillas • Arte 💖</p>
-    <a href="https://wa.me/525662971913" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
 </header>
 
 <div class="container">
@@ -153,12 +179,12 @@
     <section>
         <h2>Diamantes de Free Fire</h2>
         <div class="card">
-            <div class="item"><span>110 Diamantes</span><span><span class="precio">$18 MXN</span> <button class="btn-comprar" onclick="comprar('110 Diamantes', '$18 MXN')">Comprar</button></span></div>
-            <div class="item"><span>341 Diamantes</span><span><span class="precio">$60 MXN</span> <button class="btn-comprar" onclick="comprar('341 Diamantes', '$60 MXN')">Comprar</button></span></div>
-            <div class="item"><span>572 Diamantes</span><span><span class="precio">$86 MXN</span> <button class="btn-comprar" onclick="comprar('572 Diamantes', '$86 MXN')">Comprar</button></span></div>
-            <div class="item"><span>1166 Diamantes</span><span><span class="precio">$175 MXN</span> <button class="btn-comprar" onclick="comprar('1166 Diamantes', '$175 MXN')">Comprar</button></span></div>
-            <div class="item"><span>2398 Diamantes</span><span><span class="precio">$340 MXN</span> <button class="btn-comprar" onclick="comprar('2398 Diamantes', '$340 MXN')">Comprar</button></span></div>
-            <div class="item"><span>6160 Diamantes</span><span><span class="precio">$750 MXN</span> <button class="btn-comprar" onclick="comprar('6160 Diamantes', '$750 MXN')">Comprar</button></span></div>
+            <div class="item"><span>110 Diamantes</span><span><span class="precio">$18 MXN</span> <button class="btn-comprar" onclick="abrirModal('110 Diamantes', '$18 MXN')">Comprar</button></span></div>
+            <div class="item"><span>341 Diamantes</span><span><span class="precio">$60 MXN</span> <button class="btn-comprar" onclick="abrirModal('341 Diamantes', '$60 MXN')">Comprar</button></span></div>
+            <div class="item"><span>572 Diamantes</span><span><span class="precio">$86 MXN</span> <button class="btn-comprar" onclick="abrirModal('572 Diamantes', '$86 MXN')">Comprar</button></span></div>
+            <div class="item"><span>1166 Diamantes</span><span><span class="precio">$175 MXN</span> <button class="btn-comprar" onclick="abrirModal('1166 Diamantes', '$175 MXN')">Comprar</button></span></div>
+            <div class="item"><span>2398 Diamantes</span><span><span class="precio">$340 MXN</span> <button class="btn-comprar" onclick="abrirModal('2398 Diamantes', '$340 MXN')">Comprar</button></span></div>
+            <div class="item"><span>6160 Diamantes</span><span><span class="precio">$750 MXN</span> <button class="btn-comprar" onclick="abrirModal('6160 Diamantes', '$750 MXN')">Comprar</button></span></div>
         </div>
     </section>
 
@@ -166,24 +192,21 @@
         <h2>PROMO: Diamantes Una Vez por ID</h2>
         <div class="card promo-card">
             <span class="promo-tag">SOLO 1 VEZ POR CUENTA</span>
-            <div class="item"><span>110 Diamantes</span><span><span class="precio-promo">$13 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 110 Diamantes', '$13 MXN')">Comprar</button></span></div>
-            <div class="item"><span>341 Diamantes</span><span><span class="precio-promo">$35 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 341 Diamantes', '$35 MXN')">Comprar</button></span></div>
-            <div class="item"><span>572 Diamantes</span><span><span class="precio-promo">$55 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 572 Diamantes', '$55 MXN')">Comprar</button></span></div>
-            <div class="item"><span>1166 Diamantes</span><span><span class="precio-promo">$120 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 1166 Diamantes', '$120 MXN')">Comprar</button></span></div>
-            <div class="item"><span>2398 Diamantes</span><span><span class="precio-promo">$220 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 2398 Diamantes', '$220 MXN')">Comprar</button></span></div>
-            <div class="item"><span>6160 Diamantes</span><span><span class="precio-promo">$520 MXN</span> <button class="btn-comprar" onclick="comprar('PROMO ID: 6160 Diamantes', '$520 MXN')">Comprar</button></span></div>
-            <div class="alerta">
-                ⚠️ <b>Importante:</b> Se checa ID antes de cada compra. Solo aplica 1 vez por cuenta.
-            </div>
+            <div class="item"><span>110 Diamantes</span><span><span class="precio-promo">$13 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 110 Diamantes', '$13 MXN')">Comprar</button></span></div>
+            <div class="item"><span>341 Diamantes</span><span><span class="precio-promo">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 341 Diamantes', '$35 MXN')">Comprar</button></span></div>
+            <div class="item"><span>572 Diamantes</span><span><span class="precio-promo">$55 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 572 Diamantes', '$55 MXN')">Comprar</button></span></div>
+            <div class="item"><span>1166 Diamantes</span><span><span class="precio-promo">$120 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 1166 Diamantes', '$120 MXN')">Comprar</button></span></div>
+            <div class="item"><span>2398 Diamantes</span><span><span class="precio-promo">$220 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 2398 Diamantes', '$220 MXN')">Comprar</button></span></div>
+            <div class="item"><span>6160 Diamantes</span><span><span class="precio-promo">$520 MXN</span> <button class="btn-comprar" onclick="abrirModal('PROMO ID: 6160 Diamantes', '$520 MXN')">Comprar</button></span></div>
         </div>
     </section>
 
     <section>
         <h2>Pases Booyah FF</h2>
         <div class="card">
-            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="comprar('1 Pase Booyah', '$35 MXN')">Comprar</button></span></div>
-            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-comprar" onclick="comprar('3 Pases Booyah', '$100 MXN')">Comprar</button></span></div>
-            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-comprar" onclick="comprar('5 Pases Booyah', '$165 MXN')">Comprar</button></span></div>
+            <div class="item"><span>1 Pase</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('1 Pase Booyah', '$35 MXN')">Comprar</button></span></div>
+            <div class="item"><span>3 Pases</span><span><span class="precio">$100 MXN</span> <button class="btn-comprar" onclick="abrirModal('3 Pases Booyah', '$100 MXN')">Comprar</button></span></div>
+            <div class="item"><span>5 Pases</span><span><span class="precio">$165 MXN</span> <button class="btn-comprar" onclick="abrirModal('5 Pases Booyah', '$165 MXN')">Comprar</button></span></div>
         </div>
     </section>
 
@@ -192,98 +215,75 @@
         <div class="grid">
             <div class="card">
                 <h3>Stickers 3D</h3>
-                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-comprar" onclick="comprar('Sticker 3D', '$7 MXN')">Comprar</button></span></div>
-                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-comprar" onclick="comprar('4 Stickers 3D', '$24 MXN')">Comprar</button></span></div>
-                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="comprar('6 Stickers 3D', '$35 MXN')">Comprar</button></span></div>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$7 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker 3D', '$7 MXN')">Comprar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$24 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers 3D', '$24 MXN')">Comprar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$35 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers 3D', '$35 MXN')">Comprar</button></span></div>
             </div>
             <div class="card">
                 <h3>Stickers Básicos</h3>
-                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-comprar" onclick="comprar('Sticker Básico', '$5 MXN')">Comprar</button></span></div>
-                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="comprar('4 Stickers Básicos', '$15 MXN')">Comprar</button></span></div>
-                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="comprar('6 Stickers Básicos', '$25 MXN')">Comprar</button></span></div>
-            </div>
-            <div class="card">
-                <h3>Fotos de Perfil</h3>
-                <div class="item"><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="comprar('Foto de Perfil', '$25 MXN')">Comprar</button></div>
-            </div>
-            <div class="card">
-                <h3>Fondos para WhatsApp</h3>
-                <div class="item"><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="comprar('Fondo WhatsApp con marca de agua', '$15 MXN')">Comprar</button></div>
+                <div class="item"><span>1 c/u</span><span><span class="precio">$5 MXN</span> <button class="btn-comprar" onclick="abrirModal('Sticker Básico', '$5 MXN')">Comprar</button></span></div>
+                <div class="item"><span>4 stickers</span><span><span class="precio">$15 MXN</span> <button class="btn-comprar" onclick="abrirModal('4 Stickers Básicos', '$15 MXN')">Comprar</button></span></div>
+                <div class="item"><span>6 stickers</span><span><span class="precio">$25 MXN</span> <button class="btn-comprar" onclick="abrirModal('6 Stickers Básicos', '$25 MXN')">Comprar</button></span></div>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>Métodos de Pago</h2>
-        <div class="grid">
-            <div class="card pago-box">
-                <h4>Transferencia Bancaria</h4>
-                <div class="dato">
-                    <span><b>Clabe:</b> 722969020557739090</span>
-                    <button class="btn-comprar" onclick="copiar('722969020557739090')">Copiar</button>
-                </div>
-                <div class="dato"><span><b>Banco:</b> Mercado Pago W</span></div>
-                <div class="dato">
-                    <span><b>Nombre:</b> Dulce Garcia</span>
-                    <button class="btn-comprar" onclick="copiar('Dulce Garcia')">Copiar</button>
-                </div>
-            </div>
+</div>
 
-            <div class="card pago-box">
-                <h4>Depósito OXXO / Tarjeta</h4>
-                <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img">
-                <div class="dato">
-                    <span><b>Tarjeta:</b> 2242 1705 8094 4924</span>
-                    <button class="btn-comprar" onclick="copiar('2242170580944924')">Copiar</button>
-                </div>
-                <div class="dato">
-                    <span><b>Nombre:</b> Dulce Garcia</span>
-                    <button class="btn-comprar" onclick="copiar('Dulce Garcia')">Copiar</button>
-                </div>
-            </div>
+<!-- VENTANA MODAL DE PAGO -->
+<div id="modalPago" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h3>Métodos de Pago</h3>
+        <div class="producto-seleccionado" id="productoSeleccionado"></div>
+        
+        <div class="pago-box" style="margin-bottom:15px;">
+            <h4 style="font-size:1.1rem;">Transferencia</h4>
+            <div class="dato"><span><b>Clabe:</b> 722969020557739090</span></div>
+            <div class="dato"><span><b>Banco:</b> Mercado Pago W</span></div>
+            <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
         </div>
-        <p style="text-align:center; margin-top:20px; font-weight:700; color:var(--rosa-fuerte);">🚫 No inicio trabajos NO PAGADOS 📸 Envíame tu comprobante</p>
-    </section>
 
-    <div class="nota">
-        <h3>Aclaraciones</h3>
-        <p>⏰ <b>Demora:</b> Dependiendo del pedido entre 2 a 3 días<br>
-        💤 <b>Horario:</b> Viernes, Sábado y Domingo descanso</p>
+        <div class="pago-box">
+            <h4 style="font-size:1.1rem;">Depósito OXXO</h4>
+            <img src="https://files.evogb.win/NaKK2l.jpg" alt="QR OXXO" class="qr-img" style="width:160px; height:160px;">
+            <div class="dato"><span><b>Tarjeta:</b> 2242 1705 8094 4924</span></div>
+            <div class="dato"><span><b>Nombre:</b> Dulce Garcia</span></div>
+        </div>
+
+        <a href="#" id="btnWhatsAppPago" class="btn-ws-pago" target="_blank">Ya realicé mi pago, aquí está mi comprobante</a>
     </div>
-
 </div>
 
 <footer>
     <h3>Sígueme y Contáctame</h3>
-    <p style="margin:15px 0;">
-        <a href="https://wa.me/525662971913" target="_blank" class="btn-whatsapp">WhatsApp: 56 6297 1913</a>
-    </p>
     <p>IG: @solecito_artistic | FB: Solecito Shopp</p>
-    <p style="margin-top:20px; font-size:0.9rem;">© 2026 Solecito Shopp - Hecho con amor</p>
 </footer>
 
-<div class="toast" id="toast">✅ Redirigiendo a WhatsApp...</div>
-
 <script>
-function comprar(producto, precio) {
-    let mensaje = `Hola Solecito! 🌸🐰 Quiero comprar: ${producto} - ${precio}. ¿Me pasas datos para pagar?`;
-    let url = `https://wa.me/525662971913?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
+let productoActual = "";
+
+function abrirModal(producto, precio) {
+    productoActual = `${producto} - ${precio}`;
+    document.getElementById("productoSeleccionado").innerHTML = `🐰 Estás comprando: <br> <b>${productoActual}</b>`;
     
-    let toast = document.getElementById("toast");
-    toast.style.display = "block";
-    setTimeout(() => { toast.style.display = "none"; }, 2000);
+    let mensaje = `Hola Solecito! 🌸🐰 Ya realicé mi pago de: ${productoActual}. Te envío mi comprobante 📸`;
+    let url = `https://wa.me/525662971913?text=${encodeURIComponent(mensaje)}`;
+    document.getElementById("btnWhatsAppPago").href = url;
+    
+    document.getElementById("modalPago").style.display = "block";
 }
 
-function copiar(texto) {
-    navigator.clipboard.writeText(texto);
-    let toast = document.getElementById("toast");
-    toast.innerText = "✅ Copiado!";
-    toast.style.display = "block";
-    setTimeout(() => { 
-        toast.style.display = "none"; 
-        toast.innerText = "✅ Redirigiendo a WhatsApp...";
-    }, 2000);
+function cerrarModal() {
+    document.getElementById("modalPago").style.display = "none";
+}
+
+// Cerrar al dar click fuera
+window.onclick = function(event) {
+    let modal = document.getElementById("modalPago");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
 
