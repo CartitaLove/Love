@@ -3,71 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para ti ❤️</title>
+<title>Para mi Romina ❤️</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@600&display=swap');
 body{
     margin:0; 
     font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a237e, #9c27b0);
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
     display:flex; justify-content:center; align-items:center; 
     height:100vh; color:white; text-align:center;
-    overflow:hidden;
+    overflow:hidden; padding:20px;
+}
+@keyframes gradient {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
 }
 .sobre{
-    width:300px; height:200px; background:#fff; border-radius:10px;
+    width:320px; height:210px; background:#fff; border-radius:15px;
     position:relative; cursor:pointer; transition:0.5s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
-.sobre:hover{transform: scale(1.05);}
+.sobre:hover{transform: scale(1.08) rotate(-1deg);}
 .tapa{
-    position:absolute; width:0; height:0; border-left:150px solid transparent;
-    border-right:150px solid transparent; border-bottom:100px solid #e1bee7;
-    top:0; left:0; border-radius:10px 10px 0 0;
+    position:absolute; width:0; height:0; border-left:160px solid transparent;
+    border-right:160px solid transparent; border-bottom:105px solid #ffc1e3;
+    top:0; left:0; border-radius:15px 15px 0 0;
 }
 .carta{
-    display:none; padding:30px; max-width:500px; 
-    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-    border-radius:20px;
+    display:none; padding:45px 35px; max-width:550px; 
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(15px);
+    border-radius:25px; border:1px solid rgba(255,255,255,0.2);
+    animation: aparecer 1s ease;
 }
-h1{font-size:2em; margin-bottom:10px}
-p{font-size:1.1em; line-height:1.6; font-weight:300}
-.galeria{display:flex; gap:10px; justify-content:center; margin:20px 0}
-.galeria img{width:100px; height:100px; border-radius:15px; object-fit:cover; border:3px solid white}
+@keyframes aparecer {
+    from{opacity:0; transform: translateY(30px)}
+    to{opacity:1; transform: translateY(0)}
+}
+h1{
+    font-family: 'Dancing Script', cursive; 
+    font-size:2.5em; margin-bottom:15px; color:#ffc1e3
+}
+p{font-size:1.15em; line-height:1.9; font-weight:300; margin-bottom:15px}
+.frase-bonita{
+    font-style: italic; font-size:1.1em; color:#ffc1e3; 
+    border-left: 3px solid #ffc1e3; padding-left:15px; margin:20px 0;
+}
 .btn{
-    background:#25D366; color:white; padding:12px 25px; border-radius:50px;
-    text-decoration:none; font-weight:600; display:inline-block; margin-top:15px
+    background: linear-gradient(90deg, #25D366, #128C7E); 
+    color:white; padding:15px 35px; border-radius:50px;
+    text-decoration:none; font-weight:600; display:inline-block; margin-top:25px;
+    box-shadow: 0 5px 15px rgba(37,211,102,0.4); transition:0.3s;
 }
-.corazon{position:absolute; font-size:20px; animation:flotar 3s infinite}
+.btn:hover{transform: scale(1.05)}
+.corazon{position:absolute; font-size:22px; animation:flotar 4s infinite}
 @keyframes flotar{
-    0%{transform:translateY(0); opacity:1}
-    100%{transform:translateY(-400px); opacity:0}
+    0%{transform:translateY(0) rotate(0deg); opacity:1}
+    100%{transform:translateY(-500px) rotate(360deg); opacity:0}
+.estrellita{position:absolute; font-size:16px; animation:brillar 2s infinite}
+@keyframes brillar{
+    0%,100%{opacity:0.3} 50%{opacity:1}
 </style>
 </head>
 <body>
 
 <div class="sobre" onclick="abrirCarta()">
     <div class="tapa"></div>
-    <p style="color:#1a237e; padding-top:80px; font-weight:600">Para ti ❤️<br>Toca aquí</p>
+    <p style="color:#764ba2; padding-top:85px; font-weight:600; font-size:1.1em">Para Romina ❤️<br>Toca aquí mi amor</p>
 </div>
 
 <div class="carta" id="carta">
-    <h1>Para la mujer más bonita</h1>
+    <h1>Para Romina De La Cruz</h1>
     <p id="texto-carta">
-    Solo quería recordarte que te pienso mucho. 
-    Me encanta tu risa, tu forma de ver el mundo y hasta cuando te enojas jaja.
-    Gracias por existir y por dejarme quererte así, sin medida.
+    Mi Romina hermosa,
     
-    Este es un "te quiero" chiquito pero que viene del corazón 💜
+    Solo quería recordarte algo hoy: "solo porque sí".
+
+    Me pierdo en tus ojos cada vez que me miras. Tienen algo mágico, como si en ellos cupiera toda la calma y toda la locura bonita del mundo a la vez. Son mi lugar favorito.
+    
+    <div class="frase-bonita">
+    "Eres de esas personas que hacen que los días normales se sientan como magia"
+    </div>
+
+    Amo tu risa, amo como arrugas la nariz cuando te concentras, amo tus abrazos que curan todo, amo hasta tus enojos porque significan que te importo.
+    
+    Gracias por existir. Gracias por dejarme quererte así, sin apuro, sin medida y con todo mi corazón. 
+    Prometo cuidarte, hacerte reír, y recordarte todos los días lo increíble que eres.
+    
+    Si algún día dudas de lo mucho que significas para mí, vuelve a abrir esta carta. 
+    
+    Aquí siempre va a haber un "te pienso", un "te extraño" y un "te amo" esperándote 💜
+    
+    <div class="frase-bonita">
+    PD: Eres mi persona favorita en todo este universo.
+    </div>
     </p>
     
-    <div class="galeria">
-        <img src="foto1.jpg" alt="Nosotros 1">
-        <img src="foto2.jpg" alt="Nosotros 2">
-        <img src="foto3.jpg" alt="Nosotros 3">
-    </div>
-    
-    <a href="https://wa.me/TUNUMERO?text=Te%20quiero%20mucho%20también%20❤️" class="btn">Respóndeme con un te quiero</a>
+    <a href="https://wa.me/51936994155?text=Yo%20también%20te%20quiero%20mucho%20mi%20amor%20❤️" class="btn">Respóndeme con un te quiero</a>
 </div>
 
 <audio id="musica" loop>
@@ -80,16 +114,29 @@ function abrirCarta(){
     document.getElementById('carta').style.display = 'block';
     document.getElementById('musica').play();
     soltarCorazones();
+    soltarEstrellas();
 }
 function soltarCorazones(){
-    for(let i=0; i<15; i++){
-        let corazon = document.createElement('div');
-        corazon.className = 'corazon';
-        corazon.innerHTML = '💜';
-        corazon.style.left = Math.random()*100 + 'vw';
-        corazon.style.top = '100vh';
-        document.body.appendChild(corazon);
-        setTimeout(()=>corazon.remove(), 3000);
+    const emojis = ['💜','💖','✨','🌸','🦋'];
+    for(let i=0; i<25; i++){
+        let elemento = document.createElement('div');
+        elemento.className = Math.random() > 0.5 ? 'corazon' : 'estrellita';
+        elemento.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+        elemento.style.left = Math.random()*100 + 'vw';
+        elemento.style.top = '100vh';
+        elemento.style.animationDelay = Math.random()*2 + 's';
+        document.body.appendChild(elemento);
+        setTimeout(()=>elemento.remove(), 4000);
+    }
+}
+function soltarEstrellas(){
+    for(let i=0; i<10; i++){
+        let estrella = document.createElement('div');
+        estrella.className = 'estrellita';
+        estrella.innerHTML = '✨';
+        estrella.style.left = Math.random()*100 + 'vw';
+        estrella.style.top = Math.random()*100 + 'vh';
+        document.body.appendChild(estrella);
     }
 }
 </script>
